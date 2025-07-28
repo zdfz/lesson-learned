@@ -1422,8 +1422,8 @@
     function LessonsLearnedApp() {
       // --- State ---
       const [data, setData] = useState(() => {
-        const { data } = loadData();
-        return (data || DEMO_DATA).map(row => ({
+        // Always start with DEMO_DATA as the initial data
+        return DEMO_DATA.map(row => ({
           ...row,
           _id: row._id || genId(),
           Status: normalizeStatus(row.Status),

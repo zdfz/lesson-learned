@@ -330,10 +330,11 @@
       width: 100% !important;
       border-collapse: separate !important;
       border-spacing: 0 !important;
-      background: #1f6a4a !important;
+      background: #ffffff !important;
       border-radius: 12px !important;
       overflow: hidden !important;
       font-family: 'Euclid Circular B', Arial, sans-serif !important;
+      border: 1px solid #e5e7eb !important;
     }
 
     .table th,
@@ -347,30 +348,57 @@
     }
 
     .table th {
-      background: #1f6a4a !important;
-      color: #fff !important;
+      background: #f8f9fa !important;
+      color: #374151 !important;
       font-size: 0.9rem !important;
       font-weight: 700 !important;
-      border-bottom: 2px solid #17603a !important;
+      border-bottom: 2px solid #e5e7eb !important;
+      position: relative !important;
+      user-select: none !important;
+    }
+
+    .table th .resize-handle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      cursor: col-resize;
+      background: transparent;
+      border-left: 1px solid #d1d5db;
+      z-index: 10;
+      transition: border-color 0.2s ease;
+    }
+
+    .table th .resize-handle:hover {
+      border-left: 1px solid #9ca3af;
+    }
+
+    .table th.resizing {
+      user-select: none;
+    }
+
+    .table.resizing {
+      cursor: col-resize;
     }
 
     .table tr {
-      background: #1f6a4a !important;
-      color: #fff !important;
+      background: #ffffff !important;
+      color: #374151 !important;
       transition: background 0.15s !important;
     }
 
     .table tr:nth-child(even) {
-      background: #237a56 !important;
+      background: #f9fafb !important;
     }
 
     .table tr:hover {
-      background: #2e9e6e !important;
+      background: #f3f4f6 !important;
     }
 
     .table td {
-      border-bottom: 1px solid #17603a !important;
-      color: #fff !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      color: #374151 !important;
       font-size: 0.8rem !important;
       max-width: 220px !important;
     }
@@ -1636,6 +1664,37 @@
           console.error('Failed to notify timeline change:', err);
         }
       }
+      // Column resize functionality
+      const handleColumnResize = (e, columnKey) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const startX = e.clientX;
+        const table = e.target.closest('table');
+        const th = e.target.closest('th');
+        const startWidth = th.offsetWidth;
+
+        const handleMouseMove = (e) => {
+          const diff = e.clientX - startX;
+          const newWidth = Math.max(50, startWidth + diff); // Minimum width of 50px
+          th.style.width = newWidth + 'px';
+          th.style.minWidth = newWidth + 'px';
+          th.style.maxWidth = newWidth + 'px';
+        };
+
+        const handleMouseUp = () => {
+          document.removeEventListener('mousemove', handleMouseMove);
+          document.removeEventListener('mouseup', handleMouseUp);
+          table.classList.remove('resizing');
+          document.body.style.cursor = '';
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+        table.classList.add('resizing');
+        document.body.style.cursor = 'col-resize';
+      };
+
       const handleAdd = () => {
         setEditRow({ _id: genId(), ...FIELDS.reduce((acc, f) => { acc[f.key] = f.key === 'Status' ? 'Not Started' : (f.type === 'tags' ? [] : ''); return acc; }, {}) });
         setEditingId(null);
@@ -1855,6 +1914,11 @@
                         <span>{f.label}{f.required && <span className="text-red-500">*</span>}</span>
                         {sort.key === f.key && (sort.dir === 'asc' ? ' ↑' : ' ↓')}
                       </Tooltip>
+                      <div
+                        className="resize-handle"
+                        onMouseDown={(e) => handleColumnResize(e, f.key)}
+                        onClick={(e) => e.stopPropagation()}
+                      ></div>
                     </th>
                   ))}
                   <th className="px-2 py-2 border-b">Edit</th>

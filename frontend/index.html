@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lessons Learned - Excel Sheet</title>
+  <title>Action Plan Tracker OPS - Excel Sheet</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- React & ReactDOM CDN -->
@@ -100,33 +100,75 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
+      padding: 24px 32px;
+      background: linear-gradient(135deg, #f8fffe 0%, #e8f5f0 100%);
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(31, 106, 74, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(31, 106, 74, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary--main), var(--primary--hover), var(--secondary--main));
+      border-radius: 20px 20px 0 0;
     }
 
     .header-bar h1 {
-      font-size: 2.2rem;
-      color: var(--primary--main);
+      font-size: 2.4rem;
+      background: linear-gradient(135deg, var(--primary--main), var(--primary--hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-weight: 800;
       margin: 0;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 4px rgba(31, 106, 74, 0.1);
     }
 
     .action-buttons {
       display: flex;
-      gap: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 10px 22px;
-      box-shadow: 0 2px 8px rgba(31, 106, 74, 0.08);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      box-shadow: 0 4px 12px rgba(31, 106, 74, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05);
       border: none;
       cursor: pointer;
-      transition: background 0.18s, box-shadow 0.18s;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 8px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
     }
 
     .btn:focus-visible {
@@ -142,6 +184,8 @@
     .btn-primary:hover,
     .btn-primary:focus-visible {
       background: var(--primary--hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31, 106, 74, 0.25), 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .btn-secondary {
@@ -187,53 +231,99 @@
     }
 
     .filter-card {
-      background: var(--primary--surface);
-      border-radius: 12px;
-      box-shadow: 0 1px 6px rgba(31, 106, 74, 0.06);
-      padding: 24px;
+      background: linear-gradient(135deg, #f8fffe 0%, #e8f5f0 100%);
+      border: 1px solid rgba(31, 106, 74, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(31, 106, 74, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+      padding: 28px 32px;
       margin-bottom: 32px;
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .filter-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary--main), var(--primary--hover));
+      border-radius: 16px 16px 0 0;
     }
 
     .filter-card input[type="text"],
     .filter-card select {
-      border-radius: 6px;
-      border: 1.5px solid var(--primary--border);
-      padding: 10px 14px;
-      font-size: 1rem;
-      background: var(--white);
+      border-radius: 10px;
+      border: 2px solid rgba(31, 106, 74, 0.15);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.9);
       color: var(--text--main);
-      transition: border 0.15s;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(31, 106, 74, 0.05);
+      backdrop-filter: blur(5px);
+      min-width: 140px;
     }
 
     .filter-card input[type="text"]:focus,
     .filter-card select:focus {
       border-color: var(--primary--main);
-      outline: 2px solid var(--primary--main);
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 16px rgba(31, 106, 74, 0.15), 0 0 0 3px rgba(31, 106, 74, 0.1);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .filter-card input[type="text"]::placeholder {
+      color: rgba(16, 53, 37, 0.6);
+      font-weight: 400;
     }
 
     .clear-filter-btn {
-      background: #fff;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
       color: #1f6a4a;
-      border: 1.5px solid #1f6a4a;
-      border-radius: 6px;
-      padding: 10px 18px;
-      font-size: 1rem;
+      border: 2px solid rgba(31, 106, 74, 0.3);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.15s, color 0.15s, border 0.15s;
-      margin-left: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(31, 106, 74, 0.1);
+      backdrop-filter: blur(5px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .clear-filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .clear-filter-btn:hover::before {
+      left: 100%;
     }
 
     .clear-filter-btn:hover,
     .clear-filter-btn:focus-visible {
-      background: #e4ede9;
-      color: #256c3a;
-      border-color: #256c3a;
+      background: linear-gradient(135deg, #e4ede9 0%, #d7e4de 100%);
+      color: #103525;
+      border-color: #1f6a4a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(31, 106, 74, 0.2);
     }
 
     .table {
@@ -250,15 +340,16 @@
     .table td {
       padding: 16px 18px !important;
       text-align: left !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
+      white-space: normal !important;
+      overflow: visible !important;
+      word-wrap: break-word !important;
+      vertical-align: middle !important;
     }
 
     .table th {
       background: #1f6a4a !important;
       color: #fff !important;
-      font-size: 1.1rem !important;
+      font-size: 0.9rem !important;
       font-weight: 700 !important;
       border-bottom: 2px solid #17603a !important;
     }
@@ -280,7 +371,7 @@
     .table td {
       border-bottom: 1px solid #17603a !important;
       color: #fff !important;
-      font-size: 1rem !important;
+      font-size: 0.8rem !important;
       max-width: 220px !important;
     }
 
@@ -738,236 +829,262 @@
     // --- Demo Data (mimics Excel structure) ---
     const DEMO_DATA = [
       {
-        Challenge: "Cost Reduction/Bad handling measure affecting Quality of delivery for H&B HV shipments",
-        Description: "1.1 The training of DAs on white goods (through LG Team) has been already completed in Dammam & Riyadh, to be planned in Jeddah & Madinah. 1.2 Exploring special material handling tools like Stair climbing trolley for the Last Mile delivery. 1.3 Deploying dedicated resources to handle H&B products. 1.4 Revisit the Linehaul loading, introduce some stuffing material to arrest lateral movements.",
+        Challenge: "Lost & Damages",
+        Description: "1. Cost Reduction/Bad handling measure affecting Quality of delivery for H&B HV shipments.",
         Platform: "NA",
         Customer: "All",
-        Owner: "Operations/Customer Success",
+        Owner: "Operations/ Customer Success",
+        Action: "1.1  The training of DAs on white gooods ( through LG Team) has been already completed in Dammam & Riyadh , to be planed in Jeddah & Madinah' 1.2 Exploring special material handling tools like Stair climbing trolley for the Last Mile delivery. 1.3 Deploying dedicated resources to handle H&B products. 1.4 Revisit the Linehaul loading, introduce some stuffing materia to arrest lateral movements.",
         Status: "Work in Progress",
-        Timeline: "2025-08-05"
+        Timeline: "1.1 :  5th August'2025 1.2 : 31st August '2025 1.3 5th August'2025 1.4 : 5th August'2025"
       },
       {
-        Challenge: "Lack of solid investigations and delays in confirming Lost cases, causing customer frustration and shows lack of control",
-        Description: "2.0 Aligned with CS team to stick to 48hrs SLA.",
+        Challenge: "Lost & Damages",
+        Description: "2. Lack of solid investigations and delays in confirming Lost cases, causing customer frustration and shows lack of control.",
         Platform: "NA",
         Customer: "All",
-        Owner: "Operations/Customer Success",
+        Owner: "Operations/ Customer Success",
+        Action: "2.0 Aligned with CS team to stick to 48hrs SLA.",
         Status: "Completed",
-        Timeline: "2025-08-02"
+        Timeline: "2. Done"
       },
       {
-        Challenge: "Relying on 3PLs with Poor performance causing increased no. of damages",
-        Description: "3.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
+        Challenge: "Lost & Damages",
+        Description: "3. Relying on 3PLs with Poor performance causing increased no. of damages.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations/Customer Success",
+        Action: "3.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Missing key offerings like temperature-controlled and secure/bullet delivery",
-        Description: "1.1 The contract for temperature controlled vehicles has been already signed with COLDT & PROLO. Integration in progress. 1.2 Bullet delivery is linked to launch of Dark stores. Discussion with service providers in progress.",
+        Challenge: "Limited service offering",
+        Description: "Missing key offerings like temperature-controlled and secure/bullet delivery",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations/Commercial",
+        Action: "1.1 The contract for temperature controlled vehicles has been already signed with COLDT & PROLO. Integration in progress. 1.2 Bullet delivery is linked to launch of Dark stores. Discussion with service providers in progress.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Repeated Courier behaviors complaints for SELF",
-        Description: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
+        Challenge: "Performance issues",
+        Description: "1. Repeated Courier behaviors complaints for SELF.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "Lack of POS devices impacting SDR",
-        Description: "2.0 The contract with SNB Bank has been signed, new POS machines expected soon.",
+        Challenge: "Performance issues",
+        Description: "2. Lack of POS devices impacting SDR",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "2.0 The contract with SNB Bank has been signed, new POS machines expected soon.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Couriers asking for STC payments for COD",
-        Description: "3.0 The Couriers to be advised to strictly stop STC once we receive the POS machines to avoid conversion drop immediately.",
+        Challenge: "Performance issues",
+        Description: "3. Couriers asking for STC payments for COD",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "3.0 The Couriers to be advised to strictly stop STC once we receive the POS machines to avoid conversion drop immediately.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "FAKE NDRS not validated upon debrief",
-        Description: "4.0 Introduce the NDR audit by the hub supervisors, maybe 20% of NDRs",
+        Challenge: "Performance issues",
+        Description: "4. FAKE NDRS not validated upon debrief.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "4.0 Introduce the NDR audit by the hub supervisors, maybe 20% of NDRs",
         Status: "Work in Progress",
         Timeline: "2025-08-03"
       },
       {
-        Challenge: "Relying due to cost constraints on Poor performing 3PL",
-        Description: "5.1 Daily review on unattempt shipments & weekly performance review in place. Facing challenges in reverse pick ups. 5.2 Working on onboarding the new service providers.",
+        Challenge: "Performance issues",
+        Description: "5. Relying due to cost constraints on Poor performing 3PL",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "5.1 Daily review on unattempt shipments & weekly performance review in place. Facing challenges in reverse pick ups. 5.2 Working on onboarding the new service providers.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Delays in Closing highly escalated cases which was main point of concern of All customers in the Q1 VOC",
-        Description: "6.1 Aligned with CS team to stick to 2days SLA and assign a dedicated resource in each hub for ticket handling and follow-up. 6.2 Set clear resolution timelines and expectations when coordinating with 3PL partners.",
+        Challenge: "Performance issues",
+        Description: "6. Delays in Closing highly escalated cases which was main point of concern of All customers in the Q1 VOC.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "6.1 Aligned with CS team to stick to 2days SLA and assign a dedicated resource in each hub for ticket handling and follow-up. 6.2 Set clear resolution timelines and expectations when coordinating with 3PL partners.",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "After Ramadan and Especially due to the current Low volume, no trust in case we have a sudden surge in volumes or a new peak season (Ability for Rapid scale up)",
-        Description: "7.1 Five Man & Van service providers has been onboarded to support quick capacity ramp up. 7.2 Working with low cost options in Tier1 cities to handle overflow volume.",
+        Challenge: "Performance issues",
+        Description: "7. After Ramadan and Especially due to the current Low volume, no trust in case we have a sudden surge in volumes or a new peak season (Ability for Rapid scale up)",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "7.1 Five Man & Van service providers has been onboarded to support quick capacity ramp up. 7.2 Working with low cost options in Tier1 cities to handle overflow volume.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Inability to compete due to rigid rate structures and lack of alternative suppliers. Limits flexibility and affects win rate",
-        Description: "1.1 Early engagement for the non standard solutions. 1.2 Brainstorming session on the potential offerings and readiness.",
+        Challenge: "Rate approval and competitiveness",
+        Description: "1.0 Inability to compete due to rigid rate structures and lack of alternative suppliers. Limits flexibility and affects win rate.",
         Platform: "NA",
         Customer: "All",
         Owner: "BD/Commercial/Operations",
+        Action: "1.1 Early engagement for the non standard solutions. 1.2 Brainstorming session on the potential offerings and readiness.",
         Status: "Not Started",
         Timeline: "2025-08-15"
       },
       {
-        Challenge: "Shipment Condition: The nature of this customer's product is oils and liquids, which require special handling and clear labeling",
-        Description: "1.1 create a clear packaging guidelines for oil/liquid shipments with clients. 1.2 Rejecting unlabeled or poor packaging from the source.",
-        Platform: "NA",
-        Customer: "Zid Herb & Oil",
+        Challenge: "Shipment Condition",
+        Description: "1. Shipment Condition: The nature of this customer's product is oils and liquids, which require special handling and clear labeling. We received a shipment that was not properly marked or secured, resulting in leakage and product damage.",
+        Platform: "Zid",
+        Customer: "Herb & Oil",
         Owner: "Operations",
+        Action: "1.1 create a clear packaging guidelines for oil/liquid shipments with clients. 1.2 Rejecting unlabeled or poor packaging from the source.",
         Status: "Work in Progress",
         Timeline: "2025-08-10"
       },
       {
-        Challenge: "Collection Time: The customer refused to let us collect the shipments because they requested pickup at a specific time",
-        Description: "1.0 The pick up slots to be clear agreed during the onboarding process and documented in the SLA document.",
-        Platform: "NA",
-        Customer: "Zid Herb & Oil",
+        Challenge: "Shipment Condition",
+        Description: "2. Collection Time: The customer refused to let us collect the shipments because they requested pickup at a specific time and the pickup location is far from our warehouse.",
+        Platform: "Zid",
+        Customer: "Herb & Oil",
         Owner: "Operations",
+        Action: "1.0 The pick up slots to be clear agreed during the onboarding process and documented in the SLA document.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Heat shipments",
-        Description: "1.0 The contract for temperature controlled has been already signed with COLDT & PROLO. Integration in progress.",
-        Platform: "NA",
-        Customer: "Zid Herb & Oil",
+        Challenge: "Shipment Condition",
+        Description: "3. Heat shipments",
+        Platform: "Zid",
+        Customer: "Herb & Oil",
         Owner: "Operations",
+        Action: "1.0 The contract for temperature controlled has been already signed with COLDT & PROLO. Integration in progress.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Damaged shipments",
-        Description: "1.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
-        Platform: "NA",
-        Customer: "Zid Herb & Oil",
+        Challenge: "Shipment Condition",
+        Description: "4. Damaged shipments",
+        Platform: "Zid",
+        Customer: "Herb & Oil",
         Owner: "Operations",
+        Action: "1.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Delays, driver behavior (tips, unprofessionalism), fake attempts, and poor communication",
-        Description: "1.1 An exhaustive training document has been developed covering process compliance and behavioral aspects. 1.2 Penalizing system already in place and immediate termination",
+        Challenge: "Operations/Driver Behavior",
+        Description: "Delays, driver behavior (tips, unprofessionalism), fake attempts, and poor communication.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.1 An exhaustive training document has been developed covering process compliance and behavioral aspects. 1.2 Penalizing system already in place and immediate termination",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "Limited delivery support in some cities, especially for heavy/bulky items",
-        Description: "1.1 Exploring Jizan / Tabouk hubs — Procurement team is working to visit and assess locations. 1.2 Explore 3PL partners to cover more cities for H&B.",
+        Challenge: "Service Coverage",
+        Description: "Limited delivery support in some cities, especially for heavy/bulky items.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.1 Exploring Jizan / Tabouk hubs — Procurement team is working to visit and assess locations. 1.2 Explore 3PL partners to cover more cities for H&B.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Delays in returns, unclear credit processes",
-        Description: "1.0 Revisit the entire reverse process and define milestones & SLAs",
+        Challenge: "Reverse Logistics",
+        Description: "Delays in returns, unclear credit processes.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations/Finance",
+        Action: "1.0 Revisit the entire reverse process and define milestones & SLAs",
         Status: "Not Started",
         Timeline: "2025-08-10"
       },
       {
-        Challenge: "Impolite behavior",
-        Description: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
+        Challenge: "Courier Behavior",
+        Description: "1. Impolite behavior",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "Lack of communication",
-        Description: "1.0 triggering the customer messages when the courier is in customer area instead of triggering it once scanning - Tech team is working on it",
+        Challenge: "Courier Behavior",
+        Description: "2. Lack of communication",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 triggering the customer messages when the courier is in customer area instead of triggering it once scanning - Tech team is working on it",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "Asked for tips",
-        Description: "1.0 Penalizing system already in place and immediate termination",
+        Challenge: "Courier Behavior",
+        Description: "3. Asked for tips.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 Penalizing system already in place and immediate termination",
         Status: "Work in Progress",
         Timeline: "2025-08-05"
       },
       {
-        Challenge: "Contacted late at night",
-        Description: "1.0 The OFD attempt cut off to be defined.",
+        Challenge: "Late Communication",
+        Description: "1. Contacted late at night",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 The OFD attempt cut off to be defined.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "No prior notice before delivery",
-        Description: "1.0 To work with tech on initiating customer communications basis Geo-fencing.",
+        Challenge: "Late Communication",
+        Description: "2. No prior notice before delivery.",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 To work with tech on initiating customer communications basis Geo-fencing.",
         Status: "Work in Progress",
         Timeline: "2025-07-31"
       },
       {
-        Challenge: "Delivery took too long",
-        Description: "1.0 Control tower is monitoring the SLAs on the daily basis to ensure timely delivery.",
+        Challenge: "Delay",
+        Description: "1. Delivery took too long",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "1.0 Control tower is monitoring the SLAs on the daily basis to ensure timely delivery.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       },
       {
-        Challenge: "Missed promised delivery date",
-        Description: "2. Working on a potential SLA breach with the tech team. 2.1. Notifying customers through CS on the potential breaches.",
+        Challenge: "Delay",
+        Description: "2. Missed promised delivery date",
         Platform: "NA",
         Customer: "All",
         Owner: "Operations",
+        Action: "2.0 Working on a potential SLA breach with the tech team. 2.1 Notifying customers through CS on the potential breaches.",
         Status: "Work in Progress",
         Timeline: "2025-08-31"
       }
@@ -980,6 +1097,7 @@
       { key: "Platform", label: "Platform", required: false, tooltip: "Platform (Web, Mobile, API, etc.)." },
       { key: "Customer", label: "Customer", required: false, tooltip: "Client or organization affected." },
       { key: "Owner", label: "Owner", required: false, tooltip: "Person or team responsible." },
+      { key: "Action", label: "Action", required: false, tooltip: "Action items and steps being taken." },
       { key: "Status", label: "Status", required: false, type: "select", options: ["Not Started", "Work in Progress", "At Risk", "Completed"], tooltip: "Current state of the challenge." },
       { key: "Timeline", label: "Timeline", required: false, type: "date", tooltip: "Relevant date (e.g., fix, discovery)." },
     ];
@@ -989,9 +1107,9 @@
       "At Risk": "bg-red-500 text-white",
       "Completed": "bg-green-500 text-white"
     };
-    const STORAGE_KEY = "lessons_learned_data_v1";
-    const STORAGE_AUDIT = "lessons_learned_audit_v1";
-    const STORAGE_PREF = "lessons_learned_pref_v1";
+    const STORAGE_KEY = "action_plan_tracker_data_v1";
+    const STORAGE_AUDIT = "action_plan_tracker_audit_v1";
+    const STORAGE_PREF = "action_plan_tracker_pref_v1";
 
     // --- Utility Functions ---
     /**
@@ -1022,7 +1140,7 @@
       const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, 'Lessons');
-      XLSX.writeFile(wb, 'lessons_learned_export.xlsx');
+      XLSX.writeFile(wb, 'action_plan_tracker_export.xlsx');
     }
 
     /**
@@ -1620,16 +1738,16 @@
       return (
         <div className="main-container">
           <div className="header-bar">
-            <h1>Lessons Learned</h1>
+            <h1>Action Plan Tracker OPS</h1>
             <div className="action-buttons">
-              <button className="btn btn-primary" onClick={handleAdd}>Add Lesson</button>
+              <button className="btn btn-primary" onClick={handleAdd}>Add Action</button>
               <button className="btn btn-secondary" onClick={handleExport}>Export Excel</button>
               <label className="btn btn-import cursor-pointer">
                 Import Excel
                 <input type="file" accept=".xlsx" className="hidden" onChange={handleImport} />
               </label>
               <button className="btn btn-reset" onClick={handleReset}>Reset Form</button>
-              <button className="btn btn-dashboard" onClick={() => setShowDashboard(true)}>Dashboard</button>
+
             </div>
           </div>
           <div style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
@@ -1739,7 +1857,7 @@
                       </Tooltip>
                     </th>
                   ))}
-                  <th className="px-2 py-2 border-b">Actions</th>
+                  <th className="px-2 py-2 border-b">Edit</th>
                 </tr>
               </thead>
               <tbody

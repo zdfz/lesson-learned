@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,42 +44,49 @@
       --text--secondary: #444;
       --focus-outline: #1f6a4a;
     }
+
     @font-face {
       font-family: 'Euclid Circular B';
       src: url('./font/Euclid Circular B Light.ttf') format('truetype');
       font-weight: 300;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'Euclid Circular B';
       src: url('./font/Euclid Circular B Regular.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'Euclid Circular B';
       src: url('./font/Euclid Circular B Medium.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'Euclid Circular B';
       src: url('./font/Euclid Circular B SemiBold.ttf') format('truetype');
       font-weight: 600;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'Euclid Circular B';
       src: url('./font/Euclid Circular B Bold.ttf') format('truetype');
       font-weight: 700;
       font-style: normal;
     }
+
     body {
       background: #fff;
       color: var(--text--main);
       font-family: 'Euclid Circular B', Arial, sans-serif;
       margin: 0;
     }
+
     .main-container {
       max-width: 1100px;
       margin: 40px auto;
@@ -87,22 +95,26 @@
       box-shadow: 0 4px 32px rgba(31, 106, 74, 0.10);
       padding: 32px 40px;
     }
+
     .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 32px;
     }
+
     .header-bar h1 {
       font-size: 2.2rem;
       color: var(--primary--main);
       font-weight: 800;
       margin: 0;
     }
+
     .action-buttons {
       display: flex;
       gap: 16px;
     }
+
     .btn {
       border-radius: 8px;
       font-size: 1rem;
@@ -116,32 +128,64 @@
       align-items: center;
       gap: 8px;
     }
+
     .btn:focus-visible {
       outline: 2px solid var(--focus-outline);
       outline-offset: 2px;
     }
-    .btn-primary { background: var(--primary--main); color: var(--white); }
-    .btn-primary:hover, .btn-primary:focus-visible { background: var(--primary--hover); }
-    .btn-secondary { background: var(--secondary--main); color: var(--white); }
-    .btn-secondary:hover, .btn-secondary:focus-visible { background: var(--secondary--hover); }
-    .btn-neutral { background: var(--primary--focus); color: var(--primary--pressed); }
-    .btn-dashboard { background: #a084e8; color: var(--white); }
+
+    .btn-primary {
+      background: var(--primary--main);
+      color: var(--white);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--primary--hover);
+    }
+
+    .btn-secondary {
+      background: var(--secondary--main);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: var(--secondary--hover);
+    }
+
+    .btn-neutral {
+      background: var(--primary--focus);
+      color: var(--primary--pressed);
+    }
+
+    .btn-dashboard {
+      background: #a084e8;
+      color: var(--white);
+    }
+
     .btn-import {
       background: var(--info--main);
       color: var(--white);
     }
-    .btn-import:hover, .btn-import:focus-visible {
+
+    .btn-import:hover,
+    .btn-import:focus-visible {
       background: #174fc2;
     }
+
     .btn-reset {
       background: var(--warning--bg);
       color: var(--warning--main);
       border: 1.5px solid var(--warning--main);
     }
-    .btn-reset:hover, .btn-reset:focus-visible {
+
+    .btn-reset:hover,
+    .btn-reset:focus-visible {
       background: #ffe1b3;
       color: #aa6910;
     }
+
     .filter-card {
       background: var(--primary--surface);
       border-radius: 12px;
@@ -154,7 +198,9 @@
       align-items: center;
       justify-content: center;
     }
-    .filter-card input[type="text"], .filter-card select {
+
+    .filter-card input[type="text"],
+    .filter-card select {
       border-radius: 6px;
       border: 1.5px solid var(--primary--border);
       padding: 10px 14px;
@@ -163,10 +209,13 @@
       color: var(--text--main);
       transition: border 0.15s;
     }
-    .filter-card input[type="text"]:focus, .filter-card select:focus {
+
+    .filter-card input[type="text"]:focus,
+    .filter-card select:focus {
       border-color: var(--primary--main);
       outline: 2px solid var(--primary--main);
     }
+
     .clear-filter-btn {
       background: #fff;
       color: #1f6a4a;
@@ -179,11 +228,14 @@
       transition: background 0.15s, color 0.15s, border 0.15s;
       margin-left: 8px;
     }
-    .clear-filter-btn:hover, .clear-filter-btn:focus-visible {
+
+    .clear-filter-btn:hover,
+    .clear-filter-btn:focus-visible {
       background: #e4ede9;
       color: #256c3a;
       border-color: #256c3a;
     }
+
     .table {
       width: 100% !important;
       border-collapse: separate !important;
@@ -193,13 +245,16 @@
       overflow: hidden !important;
       font-family: 'Euclid Circular B', Arial, sans-serif !important;
     }
-    .table th, .table td {
+
+    .table th,
+    .table td {
       padding: 16px 18px !important;
       text-align: left !important;
       white-space: nowrap !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
     }
+
     .table th {
       background: #1f6a4a !important;
       color: #fff !important;
@@ -207,29 +262,38 @@
       font-weight: 700 !important;
       border-bottom: 2px solid #17603a !important;
     }
+
     .table tr {
       background: #1f6a4a !important;
       color: #fff !important;
       transition: background 0.15s !important;
     }
+
     .table tr:nth-child(even) {
       background: #237a56 !important;
     }
+
     .table tr:hover {
       background: #2e9e6e !important;
     }
+
     .table td {
       border-bottom: 1px solid #17603a !important;
       color: #fff !important;
       font-size: 1rem !important;
       max-width: 220px !important;
     }
-    .table th:first-child, .table td:first-child {
+
+    .table th:first-child,
+    .table td:first-child {
       border-top-left-radius: 12px !important;
     }
-    .table th:last-child, .table td:last-child {
+
+    .table th:last-child,
+    .table td:last-child {
       border-top-right-radius: 12px !important;
     }
+
     .status-badge {
       display: inline-block;
       padding: 4px 20px;
@@ -240,20 +304,37 @@
       min-width: 110px;
       text-align: center;
     }
+
     .status-not-started {
       background: #ffeaea;
       color: #c1121f;
     }
-    .status-in-progress { background: #ffe066; color: #b26a00; }
-    .status-completed { background: #2e9e6e; color: #fff; }
+
+    .status-work-in-progress {
+      background: #ffe066;
+      color: #b26a00;
+    }
+
+    .status-at-risk {
+      background: #ffeaea;
+      color: #c1121f;
+    }
+
+    .status-completed {
+      background: #2e9e6e;
+      color: #fff;
+    }
+
     .scrollbar-thin::-webkit-scrollbar {
       width: 6px;
       background: transparent;
     }
+
     .scrollbar-thin::-webkit-scrollbar-thumb {
       background: var(--primary--border);
       border-radius: 3px;
     }
+
     .card {
       background: var(--secondary--surface);
       border: 1px solid var(--primary--border);
@@ -262,7 +343,10 @@
       padding: 24px;
       margin-bottom: 24px;
     }
-    .input, select, textarea {
+
+    .input,
+    select,
+    textarea {
       border: 1.5px solid #b7cfc3;
       border-radius: 8px;
       padding: 12px 14px;
@@ -271,46 +355,63 @@
       color: #103525;
       transition: border 0.15s, box-shadow 0.15s;
     }
-    .input:focus, select:focus, textarea:focus {
+
+    .input:focus,
+    select:focus,
+    textarea:focus {
       border-color: #1f6a4a;
       box-shadow: 0 0 0 2px #e4ede9;
       outline: none;
     }
-    .input[aria-invalid="true"], select[aria-invalid="true"] {
+
+    .input[aria-invalid="true"],
+    select[aria-invalid="true"] {
       border-color: #c1121f;
       background: #ffeaea;
     }
-    .input[readonly], .input[disabled], select[readonly], select[disabled], textarea[readonly], textarea[disabled] {
+
+    .input[readonly],
+    .input[disabled],
+    select[readonly],
+    select[disabled],
+    textarea[readonly],
+    textarea[disabled] {
       background: #f2f6f4;
       color: #b7cfc3;
     }
+
     .label {
       font-weight: 500;
       margin-bottom: 4px;
       display: block;
       color: var(--text--main);
     }
+
     .alert {
       padding: 12px 16px;
       border-radius: 4px;
       margin-bottom: 16px;
       font-weight: 500;
     }
+
     .alert-success {
       background: var(--success--bg);
       color: var(--success--main);
       border: 1px solid var(--success--main);
     }
+
     .alert-error {
       background: var(--error--bg);
       color: var(--error--main);
       border: 1px solid var(--error--main);
     }
+
     .alert-warning {
       background: var(--warning--bg);
       color: var(--warning--main);
       border: 1px solid var(--warning--main);
     }
+
     .modal-card {
       background: #fff;
       border-radius: 18px;
@@ -327,6 +428,7 @@
       max-height: 90vh;
       overflow-y: auto;
     }
+
     @media (max-width: 600px) {
       .modal-card {
         min-width: 0;
@@ -334,12 +436,14 @@
         padding: 1.2rem 0.5rem 1.2rem 0.5rem;
       }
     }
+
     .modal-card h2 {
       font-size: 1.4rem;
       font-weight: 800;
       color: #1f6a4a;
       margin-bottom: 24px;
     }
+
     .modal-close {
       position: absolute;
       top: 18px;
@@ -351,12 +455,17 @@
       cursor: pointer;
       transition: color 0.15s;
     }
-    .modal-close:hover { color: #c1121f; }
+
+    .modal-close:hover {
+      color: #c1121f;
+    }
+
     .form-group {
       margin-bottom: 18px;
       display: flex;
       flex-direction: column;
     }
+
     .form-label {
       font-weight: 700;
       color: #103525;
@@ -366,22 +475,26 @@
       align-items: center;
       gap: 4px;
     }
+
     .form-label .required {
       color: #c1121f;
       font-size: 1.1em;
       margin-left: 2px;
     }
+
     .error-message {
       color: #c1121f;
       font-size: 0.95em;
       margin-top: 4px;
     }
+
     .button-row {
       display: flex;
       justify-content: flex-end;
       gap: 16px;
       margin-top: 24px;
     }
+
     .btn-modal-save {
       background: #1f6a4a;
       color: #fff;
@@ -394,9 +507,12 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-modal-save:hover, .btn-modal-save:focus-visible {
+
+    .btn-modal-save:hover,
+    .btn-modal-save:focus-visible {
       background: #2e9e6e;
     }
+
     .btn-modal-cancel {
       background: #e4ede9;
       color: #103525;
@@ -408,14 +524,18 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-modal-cancel:hover, .btn-modal-cancel:focus-visible {
+
+    .btn-modal-cancel:hover,
+    .btn-modal-cancel:focus-visible {
       background: #b7cfc3;
     }
+
     .action-icons {
       display: flex;
       gap: 16px;
       align-items: center;
     }
+
     .action-icon-btn {
       background: none;
       border: none;
@@ -427,20 +547,24 @@
       border-radius: 6px;
       transition: background 0.15s;
     }
+
     .action-icon-btn:focus-visible {
       outline: 2px solid #1f6a4a;
       background: #e4ede9;
     }
+
     .action-icon-edit svg,
     .action-icon-delete svg,
     .action-icon-duplicate svg {
       color: #fff;
     }
+
     .action-icon-btn:hover svg,
     .action-icon-btn:focus-visible svg {
       filter: none;
       color: #fff;
     }
+
     .modal-input {
       width: 100%;
       border: 1.5px solid #b7cfc3;
@@ -455,6 +579,7 @@
       padding: 0.75rem 1rem;
       min-height: 40px;
     }
+
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -464,6 +589,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .modal-close {
       position: absolute;
       top: 1.2rem;
@@ -475,6 +601,7 @@
       cursor: pointer;
       z-index: 10;
     }
+
     /* Add/Update styles for the view details modal */
     .view-modal-card {
       background: #e4ede9;
@@ -493,6 +620,7 @@
       overflow-y: auto;
       border: 2.5px solid #1f6a4a;
     }
+
     .view-modal-title {
       color: #fff;
       background: #1f6a4a;
@@ -503,11 +631,13 @@
       font-weight: 700;
       letter-spacing: 0.01em;
     }
+
     .view-modal-label {
       color: #1f6a4a;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
+
     .view-modal-value {
       background: #f6faf8;
       border-radius: 7px;
@@ -515,6 +645,7 @@
       color: #234c36;
       white-space: pre-line;
     }
+
     .view-modal-close {
       position: absolute;
       top: 1.2rem;
@@ -527,9 +658,11 @@
       z-index: 10;
       transition: color 0.15s;
     }
+
     .view-modal-close:hover {
       color: #256c3a;
     }
+
     /* User Guide Card Grid Styles */
     .user-guide-grid {
       display: grid;
@@ -537,6 +670,7 @@
       gap: 1.5rem;
       margin: 2.5rem 0 2rem 0;
     }
+
     .user-guide-card {
       padding: 16px;
       border-radius: 8px;
@@ -546,24 +680,29 @@
       outline: none;
       transition: box-shadow 0.15s, border 0.15s;
     }
+
     .user-guide-card:focus {
       box-shadow: 0 0 0 3px #1f6a4a;
       border: 1.5px solid #1f6a4a;
     }
+
     .user-guide-card.dark {
       background: #1f6a4a;
       color: #fff;
     }
+
     .user-guide-card.light {
       background: #e8f0ec;
       color: #1c2526;
     }
+
     @media (max-width: 600px) {
       .user-guide-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
     }
+
     /* Add Impact Level badge styles */
     .impact-badge {
       display: inline-block;
@@ -575,89 +714,262 @@
       min-width: 90px;
       text-align: center;
     }
+
     .impact-low {
       background: #2e9e6e;
       color: #fff;
     }
+
     .impact-medium {
       background: #ffe066;
       color: #7a5c00 !important;
     }
+
     .impact-high {
       background: #ffeaea;
       color: #c1121f;
     }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900 min-h-screen">
   <div id="root"></div>
   <script type="text/babel">
     // --- Demo Data (mimics Excel structure) ---
     const DEMO_DATA = [
       {
-        Customer: "Acme Corp",
-        Platform: "Web",
-        Issue: "Login fails intermittently",
-        "Detailed Description": "Users report random login failures during peak hours.",
-        "Impact Level": "High",
-        "Liable Stakeholder": "Backend Team",
-        "Preventive Action": "Improve session handling, add monitoring",
-        "Lessons Learned": "Need better load testing before releases.",
-        Status: "Open",
-        Timeline: "2024-05-01",
-        Tags: ["Backend", "Auth"]
+        Challenge: "Cost Reduction/Bad handling measure affecting Quality of delivery for H&B HV shipments",
+        Description: "1.1 The training of DAs on white goods (through LG Team) has been already completed in Dammam & Riyadh, to be planned in Jeddah & Madinah. 1.2 Exploring special material handling tools like Stair climbing trolley for the Last Mile delivery. 1.3 Deploying dedicated resources to handle H&B products. 1.4 Revisit the Linehaul loading, introduce some stuffing material to arrest lateral movements.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations/Customer Success",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
       },
       {
-        Customer: "Beta Inc",
-        Platform: "Mobile",
-        Issue: "App crashes on launch",
-        "Detailed Description": "Crash on Android 12 devices after update.",
-        "Impact Level": "Medium",
-        "Liable Stakeholder": "Mobile Team",
-        "Preventive Action": "Update dependencies, add device tests",
-        "Lessons Learned": "Test on all supported OS versions.",
-        Status: "In Progress",
-        Timeline: "2024-04-15",
-        Tags: ["Mobile"]
+        Challenge: "Lack of solid investigations and delays in confirming Lost cases, causing customer frustration and shows lack of control",
+        Description: "2.0 Aligned with CS team to stick to 48hrs SLA.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations/Customer Success",
+        Status: "Completed",
+        Timeline: "2025-08-02"
       },
       {
-        Customer: "Acme Corp",
-        Platform: "Web",
-        Issue: "Slow dashboard load",
-        "Detailed Description": "Dashboard takes >10s to load for some users.",
-        "Impact Level": "Low",
-        "Liable Stakeholder": "Frontend Team",
-        "Preventive Action": "Optimize queries, lazy load widgets",
-        "Lessons Learned": "Monitor performance post-deploy.",
-        Status: "Done",
-        Timeline: "2024-03-10",
-        Tags: ["UI", "Performance"]
+        Challenge: "Relying on 3PLs with Poor performance causing increased no. of damages",
+        Description: "3.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations/Customer Success",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
       },
       {
-        Customer: "Delta LLC",
-        Platform: "API",
-        Issue: "Incorrect data in reports",
-        "Detailed Description": "API returns outdated data for some endpoints.",
-        "Impact Level": "High",
-        "Liable Stakeholder": "API Team",
-        "Preventive Action": "Add data cache invalidation",
-        "Lessons Learned": "Automate data freshness checks.",
-        Status: "Fixed",
-        Timeline: "2024-02-20",
-        Tags: ["API"]
+        Challenge: "Missing key offerings like temperature-controlled and secure/bullet delivery",
+        Description: "1.1 The contract for temperature controlled vehicles has been already signed with COLDT & PROLO. Integration in progress. 1.2 Bullet delivery is linked to launch of Dark stores. Discussion with service providers in progress.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations/Commercial",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
       },
       {
-        Customer: "Beta Inc",
-        Platform: "Web",
-        Issue: "UI misalignment on Safari",
-        "Detailed Description": "Buttons overlap on Safari 15.",
-        "Impact Level": "Medium",
-        "Liable Stakeholder": "Frontend Team",
-        "Preventive Action": "Cross-browser CSS tests",
-        "Lessons Learned": "Include Safari in CI.",
-        Status: "In Testing",
-        Timeline: "2024-04-01",
-        Tags: ["UI"]
+        Challenge: "Repeated Courier behaviors complaints for SELF",
+        Description: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "Lack of POS devices impacting SDR",
+        Description: "2.0 The contract with SNB Bank has been signed, new POS machines expected soon.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Couriers asking for STC payments for COD",
+        Description: "3.0 The Couriers to be advised to strictly stop STC once we receive the POS machines to avoid conversion drop immediately.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "FAKE NDRS not validated upon debrief",
+        Description: "4.0 Introduce the NDR audit by the hub supervisors, maybe 20% of NDRs",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-03"
+      },
+      {
+        Challenge: "Relying due to cost constraints on Poor performing 3PL",
+        Description: "5.1 Daily review on unattempt shipments & weekly performance review in place. Facing challenges in reverse pick ups. 5.2 Working on onboarding the new service providers.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Delays in Closing highly escalated cases which was main point of concern of All customers in the Q1 VOC",
+        Description: "6.1 Aligned with CS team to stick to 2days SLA and assign a dedicated resource in each hub for ticket handling and follow-up. 6.2 Set clear resolution timelines and expectations when coordinating with 3PL partners.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "After Ramadan and Especially due to the current Low volume, no trust in case we have a sudden surge in volumes or a new peak season (Ability for Rapid scale up)",
+        Description: "7.1 Five Man & Van service providers has been onboarded to support quick capacity ramp up. 7.2 Working with low cost options in Tier1 cities to handle overflow volume.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Inability to compete due to rigid rate structures and lack of alternative suppliers. Limits flexibility and affects win rate",
+        Description: "1.1 Early engagement for the non standard solutions. 1.2 Brainstorming session on the potential offerings and readiness.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "BD/Commercial/Operations",
+        Status: "Not Started",
+        Timeline: "2025-08-15"
+      },
+      {
+        Challenge: "Shipment Condition: The nature of this customer's product is oils and liquids, which require special handling and clear labeling",
+        Description: "1.1 create a clear packaging guidelines for oil/liquid shipments with clients. 1.2 Rejecting unlabeled or poor packaging from the source.",
+        Platform: "NA",
+        Customer: "Zid Herb & Oil",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-10"
+      },
+      {
+        Challenge: "Collection Time: The customer refused to let us collect the shipments because they requested pickup at a specific time",
+        Description: "1.0 The pick up slots to be clear agreed during the onboarding process and documented in the SLA document.",
+        Platform: "NA",
+        Customer: "Zid Herb & Oil",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Heat shipments",
+        Description: "1.0 The contract for temperature controlled has been already signed with COLDT & PROLO. Integration in progress.",
+        Platform: "NA",
+        Customer: "Zid Herb & Oil",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Damaged shipments",
+        Description: "1.0 The maximum issues were reported for iMile. The volume has been shifted to J&T, parallelly working on onboarding more service providers.",
+        Platform: "NA",
+        Customer: "Zid Herb & Oil",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Delays, driver behavior (tips, unprofessionalism), fake attempts, and poor communication",
+        Description: "1.1 An exhaustive training document has been developed covering process compliance and behavioral aspects. 1.2 Penalizing system already in place and immediate termination",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "Limited delivery support in some cities, especially for heavy/bulky items",
+        Description: "1.1 Exploring Jizan / Tabouk hubs — Procurement team is working to visit and assess locations. 1.2 Explore 3PL partners to cover more cities for H&B.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Delays in returns, unclear credit processes",
+        Description: "1.0 Revisit the entire reverse process and define milestones & SLAs",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations/Finance",
+        Status: "Not Started",
+        Timeline: "2025-08-10"
+      },
+      {
+        Challenge: "Impolite behavior",
+        Description: "1.0 An exhaustive training document has been developed covering process compliance and behavioral aspects.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "Lack of communication",
+        Description: "1.0 triggering the customer messages when the courier is in customer area instead of triggering it once scanning - Tech team is working on it",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "Asked for tips",
+        Description: "1.0 Penalizing system already in place and immediate termination",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-05"
+      },
+      {
+        Challenge: "Contacted late at night",
+        Description: "1.0 The OFD attempt cut off to be defined.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "No prior notice before delivery",
+        Description: "1.0 To work with tech on initiating customer communications basis Geo-fencing.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-07-31"
+      },
+      {
+        Challenge: "Delivery took too long",
+        Description: "1.0 Control tower is monitoring the SLAs on the daily basis to ensure timely delivery.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
+      },
+      {
+        Challenge: "Missed promised delivery date",
+        Description: "2. Working on a potential SLA breach with the tech team. 2.1. Notifying customers through CS on the potential breaches.",
+        Platform: "NA",
+        Customer: "All",
+        Owner: "Operations",
+        Status: "Work in Progress",
+        Timeline: "2025-08-31"
       }
     ];
 
@@ -668,13 +980,12 @@
       { key: "Platform", label: "Platform", required: false, tooltip: "Platform (Web, Mobile, API, etc.)." },
       { key: "Customer", label: "Customer", required: false, tooltip: "Client or organization affected." },
       { key: "Owner", label: "Owner", required: false, tooltip: "Person or team responsible." },
-      { key: "Solution", label: "Solution", required: false, tooltip: "How the challenge was addressed." },
-      { key: "Status", label: "Status", required: false, type: "select", options: ["Not Started", "In Progress", "At Risk", "Completed"], tooltip: "Current state of the challenge." },
+      { key: "Status", label: "Status", required: false, type: "select", options: ["Not Started", "Work in Progress", "At Risk", "Completed"], tooltip: "Current state of the challenge." },
       { key: "Timeline", label: "Timeline", required: false, type: "date", tooltip: "Relevant date (e.g., fix, discovery)." },
     ];
     const STATUS_COLORS = {
       "Not Started": "bg-gray-400 text-white",
-      "In Progress": "bg-orange-400 text-white",
+      "Work in Progress": "bg-orange-400 text-white",
       "At Risk": "bg-red-500 text-white",
       "Completed": "bg-green-500 text-white"
     };
@@ -719,21 +1030,48 @@
      * @param {File} file
      * @param {Function} onSuccess
      * @param {Function} onError
+     * @param {Function} onSheetSelect - Called when multiple sheets are found
      */
-    function importFromExcel(file, onSuccess, onError) {
+    function importFromExcel(file, onSuccess, onError, onSheetSelect) {
       const reader = new FileReader();
       reader.onload = function (e) {
         try {
           const data = new Uint8Array(e.target.result);
           const workbook = XLSX.read(data, { type: 'array' });
-          const sheetName = 'Q1 AM Feedback Summary';
-          if (!workbook.SheetNames.includes(sheetName)) {
-            onError('Sheet "Q1 AM Feedback Summary" not found. Please check your file.');
+
+          if (workbook.SheetNames.length === 0) {
+            onError('No sheets found in the Excel file.');
             return;
           }
-          const sheet = workbook.Sheets[sheetName];
-          let rows = XLSX.utils.sheet_to_json(sheet, { defval: '' });
-          // Forward-fill 'Challenge' for blank cells
+
+          // If multiple sheets, let user choose
+          if (workbook.SheetNames.length > 1) {
+            onSheetSelect(workbook.SheetNames, (selectedSheet) => {
+              processSheet(workbook.Sheets[selectedSheet], onSuccess, onError);
+            });
+            return;
+          }
+
+          // Single sheet - process directly
+          processSheet(workbook.Sheets[workbook.SheetNames[0]], onSuccess, onError);
+
+        } catch (err) {
+          onError('Malformed Excel file. Please check the format.');
+        }
+      };
+      reader.onerror = () => onError('Failed to read file.');
+      reader.readAsArrayBuffer(file);
+    }
+
+    /**
+     * Process a single sheet
+     */
+    function processSheet(sheet, onSuccess, onError) {
+      try {
+        let rows = XLSX.utils.sheet_to_json(sheet, { defval: '' });
+
+        // Forward-fill 'Challenge' for blank cells if column exists
+        if (rows.length > 0 && rows[0].hasOwnProperty('Challenge')) {
           let lastChallenge = '';
           rows = rows.map(row => {
             if (!row['Challenge']) {
@@ -743,13 +1081,12 @@
             }
             return row;
           });
-          onSuccess(rows);
-        } catch (err) {
-          onError('Malformed Excel file. Please check the format.');
         }
-      };
-      reader.onerror = () => onError('Failed to read file.');
-      reader.readAsArrayBuffer(file);
+
+        onSuccess(rows);
+      } catch (err) {
+        onError('Error processing sheet data.');
+      }
     }
 
     /**
@@ -817,8 +1154,9 @@
       if (!status) return '';
       const s = status.trim().toLowerCase();
       if (s === 'not started' || s === 'not started yet') return 'Not Started';
-      if (s === 'in progress') return 'In Progress';
-      if (s === 'completed') return 'Completed';
+      if (s === 'in progress' || s === 'work in progress' || s === 'wip') return 'Work in Progress';
+      if (s === 'at risk') return 'At Risk';
+      if (s === 'completed' || s === 'done' || s === 'finished') return 'Completed';
       return status;
     }
     function normalizeImpactLevel(level) {
@@ -998,6 +1336,43 @@
     }
 
     /**
+     * Sheet Selection Modal
+     */
+    function SheetSelectionModal({ show, sheets, onSelect, onCancel }) {
+      if (!show) return null;
+      return (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h3 className="text-lg font-bold mb-4 text-primary--main">Select Sheet to Import</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Multiple sheets found in your Excel file. Please select which sheet to import:
+            </p>
+            <div className="space-y-2 mb-6 max-h-60 overflow-y-auto">
+              {sheets.map((sheet, index) => (
+                <button
+                  key={sheet}
+                  className="w-full text-left p-3 rounded border hover:bg-blue-50 hover:border-blue-300 transition-colors"
+                  onClick={() => onSelect(sheet)}
+                >
+                  <div className="font-medium">{sheet}</div>
+                  <div className="text-sm text-gray-500">Sheet {index + 1}</div>
+                </button>
+              ))}
+            </div>
+            <div className="flex justify-end">
+              <button
+                className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition-colors"
+                onClick={onCancel}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /**
      * AutoComplete Input
      */
     function AutoCompleteInput({ value, options, onChange, required }) {
@@ -1072,6 +1447,7 @@
       const [quickEdit, setQuickEdit] = useState({ id: null, field: null });
       const [viewLesson, setViewLesson] = useState(null);
       const [showInstructions, setShowInstructions] = useState(false);
+      const [sheetSelection, setSheetSelection] = useState({ show: false, sheets: [], onSelect: null });
       const debouncedSetSearch = useMemo(() => debounce(val => setSearch(val), 300), []);
       // --- Effects ---
       useEffect(() => {
@@ -1151,9 +1527,11 @@
         setEditingId(id);
       };
       const handleDelete = (id) => {
-        setConfirm({ open: true, action: () => {
-          setData(data => data.filter(r => r._id !== id));
-        }, message: 'Delete this row? This action cannot be undone.' });
+        setConfirm({
+          open: true, action: () => {
+            setData(data => data.filter(r => r._id !== id));
+          }, message: 'Delete this row? This action cannot be undone.'
+        });
       };
       const handleDuplicate = (id) => {
         const row = data.find(r => r._id === id);
@@ -1207,15 +1585,20 @@
           }));
           setData(newRows);
           setImportError('');
-        }, (err) => setImportError(err));
+        }, (err) => setImportError(err), (sheets, onSelect) => {
+          // Show sheet selection modal
+          setSheetSelection({ show: true, sheets, onSelect });
+        });
       };
       const handleExport = () => {
         exportToExcel(data);
       };
       const handleReset = () => {
-        setConfirm({ open: true, action: () => {
-          setData([]);
-        }, message: 'Delete all data? This action cannot be undone.' });
+        setConfirm({
+          open: true, action: () => {
+            setData([]);
+          }, message: 'Delete all data? This action cannot be undone.'
+        });
       };
       const handleQuickEdit = (id, field) => {
         setQuickEdit({ id, field });
@@ -1249,9 +1632,9 @@
               <button className="btn btn-dashboard" onClick={() => setShowDashboard(true)}>Dashboard</button>
             </div>
           </div>
-          <div style={{marginTop: '2.5rem', marginBottom: '2rem'}}>
-            <div style={{display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
-              <h2 id="user-instructions" style={{fontSize: '1.5rem', fontWeight: 700, color: '#1f6a4a', marginBottom: '1.2rem', letterSpacing: '0.01em', marginBottom: 0}}>
+          <div style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <h2 id="user-instructions" style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1f6a4a', marginBottom: '1.2rem', letterSpacing: '0.01em', marginBottom: 0 }}>
                 User Instructions
               </h2>
               <button
@@ -1277,8 +1660,8 @@
                 onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInstructions(); } }}
               >
                 {showInstructions ? 'Hide' : 'Show'}
-                <span aria-hidden="true" style={{marginLeft: '0.5em', display: 'inline-block', transition: 'transform 0.2s', transform: showInstructions ? 'rotate(180deg)' : 'rotate(0deg)'}}>
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#1f6a4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <span aria-hidden="true" style={{ marginLeft: '0.5em', display: 'inline-block', transition: 'transform 0.2s', transform: showInstructions ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#1f6a4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </span>
               </button>
             </div>
@@ -1401,21 +1784,21 @@
                           />
                         ) : f.key === 'Status' ? <span className={`status-badge status-${row[f.key]?.toLowerCase().replace(/\s/g, '-')}`}>{row[f.key]}</span>
                           : f.key === 'Impact Level' ? <ImpactBadge level={row[f.key]} />
-                          : f.key === 'Timeline' ? formatDate(row[f.key])
-                          : row[f.key]
+                            : f.key === 'Timeline' ? formatDate(row[f.key])
+                              : row[f.key]
                         }
                       </td>
                     ))}
                     <td className="px-2 py-2 border-b">
                       <div className="flex items-center justify-start gap-2 action-icons">
                         <button className="action-icon-btn action-icon-edit" onClick={() => handleEdit(row._id)} aria-label="Edit" title="Edit">
-                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 13.5V16h2.5l7.06-7.06-2.5-2.5L4 13.5zM15.41 7.09a1 1 0 000-1.41l-1.09-1.09a1 1 0 00-1.41 0l-1.13 1.13 2.5 2.5 1.13-1.13z" fill="currentColor"/></svg>
+                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 13.5V16h2.5l7.06-7.06-2.5-2.5L4 13.5zM15.41 7.09a1 1 0 000-1.41l-1.09-1.09a1 1 0 00-1.41 0l-1.13 1.13 2.5 2.5 1.13-1.13z" fill="currentColor" /></svg>
                         </button>
                         <button className="action-icon-btn action-icon-delete" onClick={() => handleDelete(row._id)} aria-label="Delete" title="Delete">
-                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M6 7v7a1 1 0 001 1h6a1 1 0 001-1V7M4 7h12M9 7V5a1 1 0 011-1h0a1 1 0 011 1v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M6 7v7a1 1 0 001 1h6a1 1 0 001-1V7M4 7h12M9 7V5a1 1 0 011-1h0a1 1 0 011 1v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                         </button>
                         <button className="action-icon-btn action-icon-duplicate" onClick={() => handleDuplicate(row._id)} aria-label="Duplicate" title="Duplicate">
-                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="7" y="7" width="7" height="7" rx="2" fill="currentColor"/><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="1.5"/></svg>
+                          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="7" y="7" width="7" height="7" rx="2" fill="currentColor" /><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="1.5" /></svg>
                         </button>
                       </div>
                     </td>
@@ -1475,7 +1858,7 @@
                           onChange={e => setEditRow(er => ({ ...er, [f.key]: e.target.value }))}
                           required={f.required}
                           rows={3}
-                          style={{resize: 'vertical'}}
+                          style={{ resize: 'vertical' }}
                         />
                       )}
                       {f.required && !editRow[f.key] && <div className="error-message">{f.label} is required.</div>}
@@ -1490,10 +1873,19 @@
             </div>
           )}
           <ConfirmModal open={confirm.open} onConfirm={() => { confirm.action(); setConfirm({ open: false, action: null, message: '' }); }} onCancel={() => setConfirm({ open: false, action: null, message: '' })} message={confirm.message} />
+          <SheetSelectionModal
+            show={sheetSelection.show}
+            sheets={sheetSelection.sheets}
+            onSelect={(sheet) => {
+              sheetSelection.onSelect(sheet);
+              setSheetSelection({ show: false, sheets: [], onSelect: null });
+            }}
+            onCancel={() => setSheetSelection({ show: false, sheets: [], onSelect: null })}
+          />
           {showDashboard && <Dashboard data={data} onClose={() => setShowDashboard(false)} />}
           {viewLesson && (
             <div className="modal-overlay" tabIndex={-1} onClick={closeViewLesson}>
-              <div className="view-modal-card" style={{pointerEvents: 'auto'}} onClick={e => e.stopPropagation()}>
+              <div className="view-modal-card" style={{ pointerEvents: 'auto' }} onClick={e => e.stopPropagation()}>
                 <button className="view-modal-close" onClick={closeViewLesson} aria-label="Close">&times;</button>
                 <div className="view-modal-title">Lesson Details</div>
                 <div className="flex flex-col gap-3">
@@ -1517,4 +1909,5 @@
     ReactDOM.createRoot(document.getElementById('root')).render(<LessonsLearnedApp />);
   </script>
 </body>
-</html> 
+
+</html>

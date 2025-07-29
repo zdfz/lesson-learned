@@ -675,13 +675,13 @@
     .action-icon-edit svg,
     .action-icon-delete svg,
     .action-icon-duplicate svg {
-      color: #fff;
+      color: #374151;
     }
 
     .action-icon-btn:hover svg,
     .action-icon-btn:focus-visible svg {
       filter: none;
-      color: #fff;
+      color: #1f2937;
     }
 
     .modal-input {
@@ -746,7 +746,7 @@
       border-radius: 12px 12px 0 0;
       padding: 1rem 1.5rem;
       margin: -2.5rem -2.5rem 1.5rem -2.5rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.01em;
     }
@@ -763,6 +763,7 @@
       padding: 0.75rem 1rem;
       color: #234c36;
       white-space: pre-line;
+      font-size: 0.85rem;
     }
 
     .view-modal-close {
@@ -2069,7 +2070,7 @@
             <div className="modal-overlay" tabIndex={-1} onClick={closeViewLesson}>
               <div className="view-modal-card" style={{ pointerEvents: 'auto' }} onClick={e => e.stopPropagation()}>
                 <button className="view-modal-close" onClick={closeViewLesson} aria-label="Close">&times;</button>
-                <div className="view-modal-title">Lesson Details</div>
+                <div className="view-modal-title">Action plan detail</div>
                 <div className="flex flex-col gap-3">
                   {FIELDS.filter(f => f.key !== 'Tags').map(f => (
                     <div key={f.key}>
